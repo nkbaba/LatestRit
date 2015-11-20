@@ -3,6 +3,16 @@ extends layout
 block content
     h1= title
     form#formAddUser(name="adduser",method="post",action="/adduser")
-        input#inputUserName(type="text", placeholder="username", name="username")
-        input#inputUserEmail(type="text", placeholder="useremail", name="useremail")
+        input#inputUserName(type="text", placeholder="Enter Your Username", name="username")
+        br
+        br
+        input#inputUserEmail(type="text", placeholder="Enter Your E-mail", name="useremail")
+        br
+        br
         button#btnSubmit(type="submit") submit
+    br
+    br        
+    a(href="../userlist")= "User List Page"
+    br
+    br        
+    a(href="../")= "Home Page"

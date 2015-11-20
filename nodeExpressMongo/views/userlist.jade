@@ -6,4 +6,16 @@ block content
     ul
         each user, i in userlist
             li
-                a(href="mailto:#{user.email}")= user.username
+                a(href="mailto:#{user.email}")="Cick here to Email : "+user.username
+        br
+
+        select
+            each user, i in userlist
+                option(value="#{user.username}")  #{user.username}
+                
+    br
+    br        
+    a(href="../newuser")= "New User Page"
+    br
+    br        
+    a(href="../")= "Home Page"
