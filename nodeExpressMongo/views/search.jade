@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    h1.
+        User List
+    ul
+        each user, i in search
+            li
+                a(href="#")="User Name: "+user.username
+        br
+    br
+    each user, i in search
+        label=" "+user.email
+        br
+    br        
+    a(href="../searchform")= "Search Form Page"
+    br
+    br        
+    a(href="../")= "Home Page"

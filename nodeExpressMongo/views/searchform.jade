@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    h1= title
+    form#formAddUser(name="search",method="post",action="/search")
+        input#inputUserName(type="text", placeholder="Enter Your Username", name="username")
+        br
+        br
+        br
+        button#btnSubmit(type="submit") submit
+    br
+    br        
+    a(href="../userlist")= "User List Page"
+    br
+    br        
+    a(href="../")= "Home Page"

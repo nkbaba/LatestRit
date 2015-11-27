@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    div(id="inputText")
+        h1.
+            Tweet List
+        h2="Total No of tweets = "+search.length
+        
+        p Search results for your Query 
+            strong " #{userName} "
+        br
+        button#btnSubmit(onclick="highlight('"+userName+"')") HighLight
+        br
+        br
+        each user, i in search
+            label=" Name: "+user.fromUserName
+            br
+            label=" Tweet: "+user.text
+            br
+            label="UserID: "+user.fromUser
+            br
+            br
+        br        
+        a(href="../searchform")= "Search Form Page"
+        br
+        br        
+        a(href="../")= "Home Page"

@@ -6,6 +6,16 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Apurva KRT Project Test Page' });
 });
 
+/* GET SearchList page. */
+router.get('/searchform', function(req, res, next) {
+  res.render('searchform', { title: 'Apurva Search KRT Project Test Page' });
+});
+
+/* GET SearchList page. */
+router.get('/searchlist', function(req, res, next) {
+  res.render('searchlist', { title: 'Apurva Search KRT Project Test Page' });
+});
+
 /* GET Hello World page. */
 router.get('/helloworld', function(req, res) {
     res.render('helloworld', { title: 'Hello, World!' });
@@ -53,6 +63,36 @@ router.post('/adduser', function(req, res) {
             // And forward to success page
             res.redirect("userlist");
         }
+    });
+});
+
+/* POST to Search User Service */
+router.post('/search', function(req, res) {
+
+    // Set our internal DB variable
+    var db = req.db;
+
+    // Get our form values. These rely on the "name" attributes
+    var userName = req.body.username;
+    //var userEmail = req.body.useremail;
+
+    // Set our collection
+    var collection = db.get('usercollection');
+
+    // Submit to the DB
+    collection.find({"username" : userName}, function (err, docs) {
+        if (err) {
+            // If it failed, return error
+            //res.send("There was a problem adding the information to the database.");
+        }
+        else {
+            // And forward to success page
+            res.render('search', {
+            "search" : docs});
+            //res.redirect("searchlist");
+
+        }
+        
     });
 });
 

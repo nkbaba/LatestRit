@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    h1= title
+    form#formSearchUser(name="search",method="post",action="/search")
+        input#inputUserName(type="text", placeholder="Enter Search Tweet", name="username")
+        br
+        br
+        br
+        button#btnSubmit(type="submit") submit
+    br
+    br        
+    br        
+    a(href="../")= "Home Page"
