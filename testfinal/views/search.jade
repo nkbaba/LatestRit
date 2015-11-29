@@ -9,19 +9,46 @@ block content
         p Search results for your Query 
             strong " #{userName} "
         br
-        button#btnSubmit(onclick="highlight('"+userName+"')") HighLight
+        //button#btnSubmit(onclick="highlight('"+userName+"')") HighLight
         br
-        br
-        each user, i in search
-            label=" Name: "+user.fromUserName
-            br
-            label=" Tweet: "+user.text
-            br
-            label="UserID: "+user.fromUser
-            br
-            br
+        #userlist
+            form#formCommentUser(name="comment",method="post",action="#")
+                table
+                
+                    thead
+                        
+                        th
+                            label="Select"
+                        th 
+                            label="Name"
+                        th 
+                            label="TweetID"
+                        th 
+                            label="UserID"
+                        th
+                            label="Edit Comment"
+                        th Submit
+                    tbody
+                    each user, i in search
+                        tr
+                        td
+                            //input(type="radio",name="RadioButton",id=user._id,onclick="method(this.id,'#{user.fromUserName}','#{user}')")
+                        td
+                            a(href="#" class="linkshowuser" rel=user._id)=""+user.fromUserName
+                        
+                        td #{user.id}
+                        
+                        td
+                            label=""+user.fromUser
+                        td
+                            a(href="#" class="linkcomment" rel=user.id)= "Edit"
+                        td(id=user.id)
+                            input#inputComment(type="text", ref=user._id, placeholder="Enter Comment", name="comment")
+                            button#btnSubmit(type="submit", onclick="submitCall(this.id)") submit
+                
         br        
         a(href="../searchform")= "Search Form Page"
         br
-        br        
+        br
+        div(id="radio")
         a(href="../")= "Home Page"

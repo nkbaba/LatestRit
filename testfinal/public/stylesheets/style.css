@@ -20,3 +20,18 @@ ul{
 {
 background-color:yellow;
 }
+
+table{
+	text-align: center;
+	margin: 2%;
+	border: solid 1px grey;
+}
+
+th{
+	text-align: center;
+	border:solid 1px;
+}
+
+td{
+	border: solid 1px;;
+}
