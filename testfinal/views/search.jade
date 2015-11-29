@@ -13,12 +13,13 @@ block content
         br
         #userlist
             form#formCommentUser(name="comment",method="post",action="#")
-                table
+
+                table(class="CSSTableGenerator")
                 
                     thead
                         
-                        th
-                            label="Select"
+                        //th
+                            //label="Select"
                         th 
                             label="Name"
                         th 
@@ -27,11 +28,11 @@ block content
                             label="UserID"
                         th
                             label="Edit Comment"
-                        th Submit
+                        //th Submit
                     tbody
                     each user, i in search
                         tr
-                        td
+                        //td
                             //input(type="radio",name="RadioButton",id=user._id,onclick="method(this.id,'#{user.fromUserName}','#{user}')")
                         td
                             a(href="#" class="linkshowuser" rel=user._id)=""+user.fromUserName
@@ -42,10 +43,10 @@ block content
                             label=""+user.fromUser
                         td
                             a(href="#" class="linkcomment" rel=user.id)= "Edit"
-                        td(id=user.id)
-                            input#inputComment(type="text", ref=user._id, placeholder="Enter Comment", name="comment")
-                            button#btnSubmit(type="submit", onclick="submitCall(this.id)") submit
-                
+                        //td(id=user.id)
+                            //input#inputComment(type="text", ref=user._id, placeholder="Enter Comment", name="comment")
+                            //button#btnSubmit(type="submit", onclick="submitCall(this.id)") submit
+        br        
         br        
         a(href="../searchform")= "Search Form Page"
         br

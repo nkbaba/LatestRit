@@ -73,12 +73,14 @@ router.post('/commentuser', function(req, res) {
     console.log("comment working at server level");
 
     var collection = db.get('tweets');
-    var userID = req.body.id1;
+    var userID = parseInt(req.body.id1);
     var userComment= req.body.comment;
-    console.log(userID);
+    var type=typeof(userID);
+    console.log("Type of ID passed: "+type+" and Value: "+userID);
     console.log(userComment);
-    var query= {"id": userID};
-    var query2={"$set": {"comment" : "Hello1"}};
+    
+    var query= {"id" : userID};
+    var query2={"$set" : {"comment" : userComment}};
     //collection.update({'id' : userID}, {$set: {"comment": userComment}}, false, true, function(err) {
         //res.send((err === null) ? { msg: '' } : { msg:'error: ' + err });
     collection.update(query,query2, false, false, function(err){

@@ -47,7 +47,7 @@ console.log("Reached Here array pos populateTable");
     	// Stick our user data array into a userlist variable in the global object
     userListData = data;
 
-      console.log(userListData.length);
+      console.log("Length of returned queries :"+userListData.length);
         // For each item in our JSON, add a table row and cells to the content string
         /*$.each(data, function(){
             tableContent += '<tr>';
@@ -63,7 +63,7 @@ console.log("Reached Here array pos populateTable");
 };
 
 
-console.log("Reached Here USERNAME CLICK CALL");
+//console.log("Reached Here USERNAME CLICK CALL");
 // Show User Info
 function showUserInfo(event) {
 	console.log("Reached Here in Click Call!!");
@@ -105,7 +105,8 @@ function commentUser(event) {
 
     var globalVar="Test Variable";
 
-    function tryMethod(variable){
+    function tryMethod(variable)
+    {
     	//alert(variable);
     	globalVar=variable;
 
@@ -129,6 +130,7 @@ function commentUser(event) {
 
            // Check for a successful (blank) response
             if (response.msg === '') {
+                
             }
             else {
                 alert('Error: ' + response.msg);
@@ -138,9 +140,10 @@ function commentUser(event) {
             populateTable();
 
         });
+        populateTable();
     }
 
-    swal({   title: "An input!",   text: "Write something interesting:",   
+    swal({   title: "A comment for input!",   text: "Write something interesting for comment",   
     	type: "input",   showCancelButton: true,   closeOnConfirm: false,   
     	animation: "slide-from-top",   inputPlaceholder: "Write something" }, 
     	
@@ -148,10 +151,12 @@ function commentUser(event) {
     	 globalVar=inputValue;   
     		if (inputValue === false) return false;      
     		if (inputValue === "") 
-    			{     swal.showInputError("You need to write something!");     return false   }      
-    		swal("Nice!", "You wrote: " + globalVar, "success")
+    			{     swal.showInputError("You need to write something!");     return false;   }      
+    		else{
+    			swal("Nice!", "You wrote: " + globalVar, "success")
     		tryMethod(globalVar);
-    		;}
+    			}
+    		}
     		);
     // Get Index of object based on id value
     //var arrayPosition = userListData.map(function(arrayItem) { return arrayItem._id; }).indexOf(thisUserName);
