@@ -1,55 +1,70 @@
 extends layout
 
 block content
-    div(id="inputText")
-        h1.
-            Tweet List
-        h2="Total No of tweets = "+search.length
-        
-        p Search results for your Query 
-            strong " #{userName} "
-        br
-        //button#btnSubmit(onclick="highlight('"+userName+"')") HighLight
-        br
-        #userlist
-            form#formCommentUser(name="comment",method="post",action="#")
 
-                table(class="CSSTableGenerator")
+    div(class="head")
+        hr
+        img(src="images/Drawing.png" width="15%" style="clear:both;margin-right:8%;" align="left")
+        h1(id="headh1")= "Twitter Project"
+        hr
+        div(class="container")
+            a(href="/")="Home"
+            a(href="/searchform")= "Search Tweets!!"
+            a(href="http://people.rit.edu/at4017/645/project2/", target="_blank")= "Hippie Travel Home Page"
+            a(href="#")="This"
+            a(href="#")="Navigation"
+            a(href="#")="Is to"
+            a(href="#")="Feel Good ;)"
+            hr
+            div(id="inputText")
+                h1.
+                    Tweet List
+                h2="Total No of tweets = "+search.length
                 
-                    thead
+                p Search results for your Query 
+                    strong " #{userName} "
+                br
+                //button#btnSubmit(onclick="highlight('"+userName+"')") HighLight
+                br
+                #userlist
+                    form#formCommentUser(name="comment",method="post",action="#")
+
+                        table(class="CSSTableGenerator")
                         
-                        //th
-                            //label="Select"
-                        th 
-                            label="Name"
-                        th 
-                            label="TweetID"
-                        th 
-                            label="UserID"
-                        th
-                            label="Edit Comment"
-                        //th Submit
-                    tbody
-                    each user, i in search
-                        tr
-                        //td
-                            //input(type="radio",name="RadioButton",id=user._id,onclick="method(this.id,'#{user.fromUserName}','#{user}')")
-                        td
-                            a(href="#" class="linkshowuser" rel=user._id)=""+user.fromUserName
-                        
-                        td #{user.id}
-                        
-                        td
-                            label=""+user.fromUser
-                        td
-                            a(href="#" class="linkcomment" rel=user.id)= "Edit"
-                        //td(id=user.id)
-                            //input#inputComment(type="text", ref=user._id, placeholder="Enter Comment", name="comment")
-                            //button#btnSubmit(type="submit", onclick="submitCall(this.id)") submit
-        br        
-        br        
-        a(href="../searchform")= "Search Form Page"
-        br
-        br
-        div(id="radio")
-        a(href="../")= "Home Page"
+                            thead
+                                
+                                //th
+                                    //label="Select"
+                                th 
+                                    label="Name"
+                                th 
+                                    label="TweetID"
+                                th 
+                                    label="UserID"
+                                th
+                                    label="Edit Comment"
+                                //th Submit
+                            tbody
+                            each user, i in search
+                                tr
+                                //td
+                                    //input(type="radio",name="RadioButton",id=user._id,onclick="method(this.id,'#{user.fromUserName}','#{user}')")
+                                td
+                                    a(href="#" class="linkshowuser" rel=user._id)=""+user.fromUserName
+                                
+                                td #{user.id}
+                                
+                                td
+                                    label=""+user.fromUser
+                                td
+                                    a(href="#" class="linkcomment" rel=user.id)= "Edit"
+                                //td(id=user.id)
+                                    //input#inputComment(type="text", ref=user._id, placeholder="Enter Comment", name="comment")
+                                    //button#btnSubmit(type="submit", onclick="submitCall(this.id)") submit
+                br        
+                br        
+                a(href="../searchform")= "Search Form Page"
+                br
+                br
+                div(id="radio")
+                a(href="../")= "Home Page"
