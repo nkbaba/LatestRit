@@ -1,27 +1,13 @@
 extends layout
 
 block content
-    div(class="head")
-        hr
-        img(src="images/Drawing.png" width="15%" style="clear:both;margin-right:8%;" align="left")
-        h1(id="headh1")= title
-        hr
-      div(class="container")
-            a(href="/")="Home"
-            a(href="/searchform")= "Search Tweets!!"
-            a(href="http://people.rit.edu/at4017/645/project2/", target="_blank")= "Hippie Travel Home Page"
-            a(href="#")="This"
-            a(href="#")="Navigation"
-            a(href="#")="Is to"
-            a(href="#")="Feel Good ;)"
-            hr
-            h1= "You can search Tweet Text in this field"
-            form#formSearchUser(name="search",method="post",action="/search")
-                input#inputUserName(type="text", placeholder="Enter Search Tweet", name="username")
-                
-                br
-                button#btnSubmit(type="submit") Hit Me!!
-            br
-            br        
-            br        
-            a(href="../")= "Home Page"
+    h1= "You can search Tweet Text in this field"
+    form#formSearchUser(name="search",method="post",action="/search")
+        input#inputUserName(type="text", placeholder="Enter Search Tweet", name="username")
+        
+        br
+        button#btnSubmit(type="submit") Hit Me!!
+    br
+    br        
+    br        
+    a(href="../")= "Home Page"

@@ -1,25 +1,13 @@
 extends layout
 
 block content
-  div(class="head")
-    hr
-    img(src="images/Drawing.png" width="15%" style="clear:both;margin-right:8%;" align="left")
-    h1(id="headh1")= title
-    hr
-  div(class="container")
-    a(href="/")="Home"
-    a(href="/searchform")= "Search Tweets!!"
-    a(href="http://people.rit.edu/at4017/645/project2/", target="_blank")= "Hippie Travel Home Page"
-    a(href="#")="This"
-    a(href="#")="Navigation"
-    a(href="#")="Is to"
-    a(href="#")="Feel Good ;)"
-    hr
     p Hello, Everyone! 
     p Welcome to #{title}
     p You can choose Search Tweets for text search purpose from above navigation.
-    p You can find the source code at http://www.github.com/alonemayank/rit/testfinal
-    p If this doesn't work for you wait till I update it. Thanks!!
+    p You can find the source code at https://github.com/alonemayank/LatestRit/tree/master/testfinal
+    p If this doesn't work for you wait till we update it. Thanks!!
+    p This project uses Server Side Java Script NodeJS and NoSql database MongoDB. We have used express as middleware for rendering our project on browser. Express gives JADE as default templating engine which is different from HTML and easy to code once you know basic rules.
+    p This project also use client side JavaScript and AJAX to call backend (server) with combining JQuery at someplaces. Customised alerts are done with help of SweetAlert JavaScript library.
+    p There are additional links in Navigation for Data Visualization purposes of the Database if that interests you. We are trying to do this visualization dynamic but for demonstration purpose it is supplied with static data.
     
     //h3 You have following links to choose from
-    

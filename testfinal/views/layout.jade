@@ -1,16 +1,29 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    link(rel="stylesheet", type="text/css",href="dist/sweetalert.css")
-    script(src="dist/sweetalert.min.js")
-    script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
-    script(src="/javascripts/script.js")
-    link(href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css')
-    link(href='https://fonts.googleapis.com/css?family=Petit+Formal+Script' rel='stylesheet' type='text/css')
-
-
-  body
-    block content
-        
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		link(rel="stylesheet", type="text/css",href="dist/sweetalert.css")
+		script(src="dist/sweetalert.min.js")
+		script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+		script(src="/javascripts/script.js")
+		link(href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css')
+		link(href='https://fonts.googleapis.com/css?family=Petit+Formal+Script' rel='stylesheet' type='text/css')
+		script(src="https://maps.googleapis.com/maps/api/js")
+	body
+		div(class="head")
+				hr
+				img(src="images/Drawing.png" width="15%" style="clear:both;margin-right:8%;" align="left")
+				h1(id="headh1")= title
+				hr
+		div(class="container")
+			a(href="/")="Home"
+			a(href="/searchform")= "Search Tweets!!"
+			//a(href="http://people.rit.edu/at4017/645/project2/", target="_blank")= "Hippie Travel Home Page"
+			a(href="#")="This"
+			a(href="#")="Navigation"
+			a(href="#")="Is to"
+			a(href="#")="Feel Good ;)"
+			hr
+		block content
+			

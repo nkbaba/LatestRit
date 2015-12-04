@@ -36,15 +36,13 @@ router.post('/search', function(req, res) {
     // Submit to the DB
     collection.find(query, function (err, docs) {
         if (err) {
-            // If it failed, return error
-            //res.send("There was a problem adding the information to the database.");
+            
         }
         else {
             // And forward to success page
             res.render('search', {
-            "search" : docs, "userName" : userName});
-            //res.redirect("searchlist");
-
+            "search" : docs, "userName" : userName, title: 'Find Tweets Project' });
+          
         }
         
     });
@@ -68,7 +66,7 @@ router.get('/userlist', function(req, res) {
  * Update to Comment
  */
 router.post('/commentuser', function(req, res) {
-    //response.setHeader('Access-Control-Allow-Origin', '*');
+   
     var db = req.db;
     console.log("comment working at server level");
 
@@ -81,13 +79,15 @@ router.post('/commentuser', function(req, res) {
     
     var query= {"id" : userID};
     var query2={"$set" : {"comment" : userComment}};
-    //collection.update({'id' : userID}, {$set: {"comment": userComment}}, false, true, function(err) {
-        //res.send((err === null) ? { msg: '' } : { msg:'error: ' + err });
+  
     collection.update(query,query2, false, false, function(err){
-    //var err=null;
+    
     res.send((err === null) ? { msg: '' } : { msg:'error: ' + err });
     });
     });
 
-
+/* GET MapHome page. */
+router.get('/map', function(req, res, next) {
+  res.render('map', { title: 'Find Tweets Project' });
+});
 module.exports = router;

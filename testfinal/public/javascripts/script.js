@@ -1,40 +1,29 @@
-function highlight(text)
-{
-    inputText = document.getElementById("inputText")
-    var innerHTML = inputText.innerHTML
-    var index = innerHTML.indexOf(text);
-     	console.log(index);
-        innerHTML = innerHTML.substring(0,index) + "<span class='highlight'>" + innerHTML.substring(index,index+text.length) + "</span>" + innerHTML.substring(index + text.length);
-        inputText.innerHTML = innerHTML 
-}
-
 function method(id,user,object)
 {
-	//var obj=JSON.parse(object[1]);
-	//JSON.stringify(obj);
-	//alert("Your Tweet Id is: "+id+" \n User Name: "+user);
+	
 	console.log(user);
-	//swal({   title: "Information!",   text: "This is tweet ID: "+id+"\n This is user: "+user,   type: "warning",   confirmButtonText: "Ok" });
-	//console.log(obj);
+	
 }
 
-//===================*******************************************************************=======================================
+//===================*******************************************************************=============================
 
 // Userlist data array for filling in info box
+
 var userListData = [];
 
-// DOM Ready =============================================================
-$(document).ready(function() {
+//============================================ DOM Ready =============================================================
+    $(document).ready(function() {
 
-    // Populate the user table on initial page load
-    populateTable();
-    // Username link click
-$('#userlist table tbody').on('click', 'td a.linkshowuser', showUserInfo);
-$('#userlist table tbody').on('click', 'td a.linkcomment', commentUser);
+        // Populate the user table on initial page load
+        populateTable();
+        initialize();
+        // Username link click
+    $('#userlist table tbody').on('click', 'td a.linkshowuser', showUserInfo);
+    $('#userlist table tbody').on('click', 'td a.linkcomment', commentUser);
 
 });
 
-// Functions =============================================================
+//============================================= Functions =============================================================
 
 // Fill table with data
 function populateTable() {
@@ -48,22 +37,11 @@ console.log("Reached Here array pos populateTable");
     userListData = data;
 
       console.log("Length of returned queries :"+userListData.length);
-        // For each item in our JSON, add a table row and cells to the content string
-        /*$.each(data, function(){
-            tableContent += '<tr>';
-            tableContent += '<td><a href="#" class="linkshowuser" rel="' + this.username + '">' + this.username + '</a></td>';
-            tableContent += '<td>' + this.email + '</td>';
-            tableContent += '<td><a href="#" class="linkdeleteuser" rel="' + this._id + '">delete</a></td>';
-            tableContent += '</tr>';
-        });
-*/
-        // Inject the whole content string into our existing HTML table
-        //$('#userList table tbody').html(tableContent);
+       
     });
 };
 
 
-//console.log("Reached Here USERNAME CLICK CALL");
 // Show User Info
 function showUserInfo(event) {
 	console.log("Reached Here in Click Call!!");
@@ -90,7 +68,7 @@ function showUserInfo(event) {
     	commentCheck="No Comment to Display";
     }
 
-    swal({   title: "Information!",   text: "Tweet ID: "+thisUserObject.id+"\n Name: "+thisUserObject.fromUserName+"\n User ID: "+thisUserObject.fromUser+"\n Text: "+thisUserObject.text+"\n Longitude: "+thisUserObject.longitude+"\t Latitude: "+thisUserObject.latitude+"\n comment: "+commentCheck,   type: "warning",   confirmButtonText: "OK, Go Back" });
+    swal({   title: "Information!",   text: "Tweet ID: "+thisUserObject.id+"\n Name: "+thisUserObject.fromUserName+"\n User ID: "+thisUserObject.fromUser+"\n Text: "+thisUserObject.text+"\n Longitude: "+thisUserObject.longitude+"\t <a href='#'>Latitude: </a>"+thisUserObject.latitude+"\n comment: "+commentCheck,   type: "warning",   confirmButtonText: "OK, Go Back" });
 
 };
 
@@ -158,15 +136,5 @@ function commentUser(event) {
     			}
     		}
     		);
-    // Get Index of object based on id value
-    //var arrayPosition = userListData.map(function(arrayItem) { return arrayItem._id; }).indexOf(thisUserName);
-    // Get our User Object
-    //var thisUserObject = userListData[arrayPosition];
-    //console.log(thisID);
-
-    //console.log(globalVar);
-    //console.log("Reached Here cs log");
-
-    //swal({   title: "Information!",   text: "Tweet ID: "+thisUserObject.id+"\n Name: "+thisUserObject.fromUserName+"\n User ID: "+thisUserObject.fromUser+"\n Text: "+thisUserObject.text+"\n Longitude: "+thisUserObject.longitude+"\t Latitude: "+thisUserObject.latitude+"\n Time: "+thisUserObject.createdAt,   type: "warning",   confirmButtonText: "OK, Go Back" });
-
+    
 };

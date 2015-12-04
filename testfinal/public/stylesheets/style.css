@@ -39,8 +39,10 @@ a:link{
 	font-weight: bold;
 	text-transform: uppercase;;
 	padding: 4px;
-	margin-right: 5%;
-
+	margin-right: 2%;
+	background-color: lightgrey;
+	margin-bottom: 2%;
+	display: inline-block;
     text-decoration: none;
     color: #606870;
     
@@ -169,3 +171,8 @@ background-color:yellow;
 	border-width:0px 0px 1px 1px;
 }
 
+#map {
+    width: 65%;
+    height: 20em;
+    background-color: #CCC;
+	margin: auto;}
