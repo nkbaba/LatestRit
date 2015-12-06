@@ -80,7 +80,7 @@ function showUserInfo(event) {
     	commentCheck="No Comment to Display";
     }
 
-    swal({   title: "Information!",   text: "Tweet ID: "+thisUserObject.id+"\n Name: "+thisUserObject.fromUserName+"\n User ID: "+thisUserObject.fromUser+"\n Text: "+thisUserObject.text+"\n Longitude: "+thisUserObject.longitude+"\t Latitude:"+thisUserObject.latitude+"\n comment: "+commentCheck,   type: "warning",   confirmButtonText: "OK, Go Back" });
+    swal({   title: "Information!",   text: "Tweet ID: "+thisUserObject.id+"\n Name: "+thisUserObject.fromUserName+"\n User ID: "+thisUserObject.fromUser+"\n Text: "+thisUserObject.text+"\n Longitude: "+thisUserObject.longitude+"\t <a href='#'>Latitude: </a>"+thisUserObject.latitude+"\n comment: "+commentCheck,   type: "warning",   confirmButtonText: "OK, Go Back" });
 
 };
 

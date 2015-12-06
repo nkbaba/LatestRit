@@ -46,7 +46,7 @@ block content
                         td
                             a(href="#" class="linkcomment" rel=user.id)= "Edit"
                         td
-                            a(href="/map" target="_blank" onclick="MapCordinates(#{user.latitude},#{user.longitude})" rel=user.id)= "Location"
+                            a(href="/map/#{user.id}" target="_blank" rel=user.id)= "Location"
                         //td(id=user.id)
                             //input#inputComment(type="text", ref=user._id, placeholder="Enter Comment", name="comment")
                             //button#btnSubmit(type="submit", onclick="submitCall(this.id)") submit

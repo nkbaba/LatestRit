@@ -1,4 +1,8 @@
 extends layout
 
 block content
-	div(id="map")
+	each user, i in co
+		br
+		a(href="#" onclick="initialize("+co[0].latitude+","+co[0].longitude+")") Click Here to Show Map
+		div(id="map")
+			//p="Something "+user.latitute+" "+co[0].latitude

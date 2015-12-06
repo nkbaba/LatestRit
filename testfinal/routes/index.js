@@ -87,7 +87,23 @@ router.post('/commentuser', function(req, res) {
     });
 
 /* GET MapHome page. */
-router.get('/map', function(req, res, next) {
-  res.render('map', { title: 'Find Tweets Project' });
+router.get('/map/:id', function(req, res, next) {
+  var someVar = parseInt(req.params.id);
+console.log("came on map");
+  var db =req.db;
+   var collection = db.get('tweets');
+    var query= {"id" : someVar};
+console.log(someVar);
+    // Submit to the DB
+    collection.find(query, function(e,docs){
+        if(e){
+            console.log("Find Query dint work");
+        }
+        else{
+        res.render('map', {"co" : docs, title: 'Find Tweets Project' });        
+        }
+    });
+
+
 });
 module.exports = router;

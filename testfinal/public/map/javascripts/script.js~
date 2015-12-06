@@ -2,13 +2,13 @@ function initialize(lt,lo) {
         var mapCanvas = document.getElementById('map');
         var mapOptions = {
           center: new google.maps.LatLng(lt, lo),
-          zoom: 15,
+          zoom: 8,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         }
         var map = new google.maps.Map(mapCanvas, mapOptions)
       }
 
-
+initialize();
 //*****************************************************************
 function method(id,user,object)
 {
@@ -80,7 +80,7 @@ function showUserInfo(event) {
     	commentCheck="No Comment to Display";
     }
 
-    swal({   title: "Information!",   text: "Tweet ID: "+thisUserObject.id+"\n Name: "+thisUserObject.fromUserName+"\n User ID: "+thisUserObject.fromUser+"\n Text: "+thisUserObject.text+"\n Longitude: "+thisUserObject.longitude+"\t Latitude:"+thisUserObject.latitude+"\n comment: "+commentCheck,   type: "warning",   confirmButtonText: "OK, Go Back" });
+    swal({   title: "Information!",   text: "Tweet ID: "+thisUserObject.id+"\n Name: "+thisUserObject.fromUserName+"\n User ID: "+thisUserObject.fromUser+"\n Text: "+thisUserObject.text+"\n Longitude: "+thisUserObject.longitude+"\t <a href='#'>Latitude: </a>"+thisUserObject.latitude+"\n comment: "+commentCheck,   type: "warning",   confirmButtonText: "OK, Go Back" });
 
 };
 
